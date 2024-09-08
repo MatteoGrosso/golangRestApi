@@ -32,6 +32,7 @@ func Authenticate(context *gin.Context) {
 	//using 0 as i'm passing userId only
 	userId := int64(tokenParams[0].(float64))
 
+	//setting the userId in the context for ownership checks in update and delete
 	context.Set("userId", userId)
 	context.Next()
 }
